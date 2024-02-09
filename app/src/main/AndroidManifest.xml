@@ -33,6 +33,15 @@
         <activity
             android:name=".StudentHome"
             android:exported="true"/>
+
+        <activity
+            android:name=".TPOLogin"
+            android:exported="true"/>
+
+        <activity
+            android:name=".TPORegister"
+            android:exported="true"/>
+
     </application>
 
 

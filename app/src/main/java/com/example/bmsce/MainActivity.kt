@@ -3,6 +3,7 @@ package com.example.bmsce
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,5 +18,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(baseContext, StudentLogin::class.java)
             startActivity(intent)
         }
+    }
+
+    fun tpoClicked(view: View)
+    {
+        val intent = Intent(baseContext, TPOLogin::class.java)
+        startActivity(intent)
     }
 }
