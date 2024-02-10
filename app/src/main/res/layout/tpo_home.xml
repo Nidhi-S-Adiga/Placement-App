@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D9DA"
+    tools:context=".TPOHome">
+
+    <RelativeLayout
+        android:id="@+id/rl01"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:background="#0288D1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" >
+
+        <RelativeLayout
+            android:id="@+id/rl02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/hlogo0"
+                android:layout_width="45sp"
+                android:layout_height="45sp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/graduateiconwhite" />
+
+            <TextView
+                android:id="@+id/bmsce0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/hlogo0"
+                android:layout_centerVertical="true"
+                android:text="BMSCE"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/health0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/bmsce0"
+                android:text=" Placements"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#ffffff"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150sp"
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/addcompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12sp"
+            android:background="@drawable/shape_login_panel"
+            android:clickable="true"
+            android:onClick="AddCompany"
+            app:cardCornerRadius="15sp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16sp">
+
+                <ImageView
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:src="@drawable/companypic" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    android:text="Company"
+                    android:textColor="#000000"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/previouspapers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12sp"
+            android:background="@drawable/shape_login_panel"
+            android:clickable="true"
+            android:onClick="PreviousPapers"
+            app:cardCornerRadius="15sp"
+            app:cardElevation="6sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16sp">
+
+                <ImageView
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:src="@drawable/paperpic" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    android:text="Papers"
+                    android:textColor="#000000"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/addnotif"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12sp"
+            android:background="@drawable/shape_login_panel"
+            android:clickable="true"
+            android:onClick="AddNotification"
+            app:cardCornerRadius="15sp"
+            app:cardElevation="6sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16sp">
+
+                <ImageView
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:src="@drawable/notify2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    android:text="Notify"
+                    android:textColor="#000000"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/selectedstudents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12sp"
+            android:background="@drawable/shape_login_panel"
+            android:clickable="true"
+            android:onClick="SelectedStudents"
+            app:cardCornerRadius="15sp"
+            app:cardElevation="6sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16sp">
+
+                <ImageView
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:src="@drawable/graduated" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    android:text="Selected"
+                    android:textColor="#000000"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/TpoEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@id/gridLayout"
+        app:layout_constraintTop_toBottomOf="@id/gridLayout" />
+
+    <Button
+        android:id="@+id/logoutbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:background="@drawable/myowngradient3"
+        android:onClick="LogoutOfficer"
+        android:text="Log Out"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

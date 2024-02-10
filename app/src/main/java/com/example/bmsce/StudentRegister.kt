@@ -24,23 +24,25 @@ class StudentRegister: AppCompatActivity() {
             val email = binding.signupEmail.text.toString()
             val password = binding.signupPassword.text.toString()
 
-            if(email.isNotEmpty() && password.isNotEmpty()){
-                firebaseAuth.createUserWithEmailAndPassword(email,password)
-                    .addOnCompleteListener(this) {task ->
-                        if(task.isSuccessful){
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                // Check if email ends with "bmsce.ac.in"
+                if (!email.endsWith("bmsce.ac.in")) {
+                    Toast.makeText(this, "Please use a valid 'bmsce.ac.in' email", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
+                firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
                             Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this, StudentLogin::class.java)
                             startActivity(intent)
                             finish()
-                        }
-                        else{
+                        } else {
                             Toast.makeText(this, "Signup Failed", Toast.LENGTH_SHORT).show()
                         }
-
                     }
-            }
-
-            else{
+            } else {
                 Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show()
             }
         }

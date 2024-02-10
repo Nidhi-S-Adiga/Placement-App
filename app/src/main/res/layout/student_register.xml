@@ -53,6 +53,21 @@
 
         </RelativeLayout>
 
+        <TextView
+            android:id="@+id/studentSignupHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="138dp"
+            android:layout_marginBottom="27dp"
+            android:text="Student Signup"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
     <LinearLayout
@@ -72,7 +87,7 @@
             android:id="@+id/signupEmail"
             android:layout_width="match_parent"
             android:layout_height="60sp"
-            android:hint="Email"
+            android:hint="Student Email"
             android:textColor="#000000" />
 
         <EditText

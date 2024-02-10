@@ -42,6 +42,14 @@
             android:name=".TPORegister"
             android:exported="true"/>
 
+        <activity
+            android:name=".TPOHome"
+            android:exported="true"/>
+
+        <activity
+            android:name=".activityHome"
+            android:exported="true"/>
+
     </application>
 
 

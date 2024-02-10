@@ -29,7 +29,7 @@
                 android:src="@drawable/graduateiconwhite" />
 
             <TextView
-                android:id="@+id/cvrceName1"
+                android:id="@+id/bmsceName1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/clogo0"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/cvrceName1"
+                android:layout_toRightOf="@id/bmsceName1"
                 android:text=" Placements"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#ffffff"
@@ -52,7 +52,20 @@
                 android:textStyle="bold" />
 
         </RelativeLayout>
-
+        <TextView
+            android:id="@+id/tpoRegisterHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="94dp"
+            android:layout_marginBottom="27dp"
+            android:text=" Placement Officer Signup"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <LinearLayout
@@ -69,14 +82,14 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/signupEmail"
+            android:id="@+id/signupEmailTpo"
             android:layout_width="match_parent"
             android:layout_height="60sp"
-            android:hint="Email"
+            android:hint="Placement Officer Email"
             android:textColor="#000000" />
 
         <EditText
-            android:id="@+id/signupPassword"
+            android:id="@+id/signupPasswordTpo"
             android:layout_width="match_parent"
             android:textColor="#000000"
             android:inputType="textPassword"
@@ -84,16 +97,18 @@
             android:hint="Password" />
 
         <Button
-            android:id="@+id/studentRegister"
-            android:onClick="StudentRegIn"
+            android:id="@+id/tpoRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/myowngradient"
-            android:text="Register"
-            android:textSize="27sp"
-            android:textColor="#ffffff"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="250px"
             android:layout_marginTop="50px"
+            android:background="@drawable/myowngradient"
+            android:onClick="tpoRegIn"
+            android:text="Register"
+            android:textColor="#ffffff"
+            android:textSize="27sp"
             app:layout_constraintBottom_toBottomOf="@id/llLoginPanel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -102,11 +117,10 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/old_user"
+        android:id="@+id/tpoLoginRedirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Already Registered? Click here to login!"
-        android:onClick="oldUserClicked"
         app:layout_constraintBottom_toBottomOf="@id/llLoginPanel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>

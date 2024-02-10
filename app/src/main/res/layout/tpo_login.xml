@@ -30,7 +30,7 @@
                 android:src="@drawable/graduateiconwhite" />
 
             <TextView
-                android:id="@+id/cvrceName1"
+                android:id="@+id/bmsceName1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/clogo0"
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/cvrceName1"
+                android:layout_toRightOf="@id/bmsceName1"
                 android:text=" Placements"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#ffffff"
@@ -53,9 +53,22 @@
                 android:textStyle="bold" />
 
 
-
         </RelativeLayout>
 
+        <TextView
+            android:id="@+id/tpoLoginHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="94dp"
+            android:layout_marginBottom="27dp"
+            android:text=" Placement Officer Login"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
@@ -74,39 +87,30 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/loginEmail"
+            android:id="@+id/loginEmailTpo"
             android:layout_width="match_parent"
             android:layout_height="60sp"
-            android:hint="Student ID"
+            android:hint="Placement Officer Email"
             android:textColor="#000000" />
 
         <EditText
-            android:id="@+id/loginPassword"
+            android:id="@+id/loginPasswordTpo"
             android:layout_width="match_parent"
             android:textColor="#000000"
             android:inputType="textPassword"
             android:layout_height="60sp"
             android:hint="Password" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15sp"
-            android:textColor="#000000"
-            android:gravity="right"
-            android:text="Forgot Password ?" />
-
         <Button
-            android:id="@+id/studentlogin"
-            android:onClick="StudentLoggedIn"
+            android:id="@+id/tpologin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/myowngradient"
-            android:text="Login"
-            android:textSize="27sp"
-            android:textColor="#ffffff"
             android:layout_marginLeft="250px"
             android:layout_marginTop="50px"
+            android:background="@drawable/myowngradient"
+            android:text="Login"
+            android:textColor="#ffffff"
+            android:textSize="27sp"
             app:layout_constraintBottom_toBottomOf="@id/llLoginPanel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -114,11 +118,10 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/new_user"
+        android:id="@+id/newuserTpo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New User? Click here!"
-        android:onClick="newUserClicked"
         app:layout_constraintBottom_toBottomOf="@id/llLoginPanel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
