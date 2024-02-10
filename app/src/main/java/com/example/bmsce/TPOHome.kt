@@ -1,7 +1,9 @@
 package com.example.bmsce
 
 import android.content.Intent
+import android.health.connect.datatypes.units.Length
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bmsce.databinding.TpoHomeBinding
@@ -21,6 +23,13 @@ class TPOHome : AppCompatActivity(){
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+
+        val userEmail = intent.extras?.getString("userEmail")?:"No message found"
+
+        // Find the TextView by its ID in the XML layout
+        val userEmailTextView: TextView = findViewById(R.id.TpoEmailTextView)
+
+        userEmailTextView.text = userEmail
 
         // Set click listener for the logout button
         binding.logoutbtn1.setOnClickListener {

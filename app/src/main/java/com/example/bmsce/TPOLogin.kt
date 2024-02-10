@@ -54,12 +54,19 @@ class TPOLogin : AppCompatActivity() {
 
 
                         if(userData != null && userData.password == password){
-                            Toast.makeText(this@TPOLogin, "Login Successful",Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@TPOLogin, "Login Successful", Toast.LENGTH_SHORT).show()
 
                             val welcomeMessage = "Welcome, ${userData.email}"
                             Toast.makeText(this@TPOLogin, welcomeMessage, Toast.LENGTH_SHORT).show()
 
-                            startActivity(Intent(this@TPOLogin, TPOHome::class.java))
+                            // Put the "userEmail" extra into the intent
+                            val intent = Intent(this@TPOLogin, TPOHome::class.java)
+                            intent.putExtra("userEmail", email)
+
+                            // Start the TPOHome activity with the prepared intent
+                            startActivity(intent)
+
+                            // Finish the current activity
                             finish()
                             return
                         }

@@ -30,7 +30,8 @@ class StudentHome : AppCompatActivity() {
         if (currentUser != null) {
             // User is logged in, retrieve and display their email
             val userEmail = currentUser.email
-            userEmailTextView.text = "Logged in as: $userEmail"
+            Toast.makeText(this, "Welcome,$userEmail", Toast.LENGTH_SHORT).show()
+            userEmailTextView.text = "$userEmail"
         } else {
             // User is not logged in, handle accordingly
             userEmailTextView.text = "Not logged in"
