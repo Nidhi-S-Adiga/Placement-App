@@ -52,8 +52,13 @@ class TPOLogin : AppCompatActivity() {
                     for(userSnapshot in dataSnapshot.children){
                         val userData = userSnapshot.getValue(UserData::class.java)
 
+
                         if(userData != null && userData.password == password){
                             Toast.makeText(this@TPOLogin, "Login Successful",Toast.LENGTH_SHORT).show()
+
+                            val welcomeMessage = "Welcome, ${userData.email}"
+                            Toast.makeText(this@TPOLogin, welcomeMessage, Toast.LENGTH_SHORT).show()
+
                             startActivity(Intent(this@TPOLogin, TPOHome::class.java))
                             finish()
                             return
