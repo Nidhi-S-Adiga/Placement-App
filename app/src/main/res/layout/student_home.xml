@@ -68,7 +68,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/addcompany"
+            android:id="@+id/viewcompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -76,7 +76,7 @@
             android:layout_margin="12sp"
             android:background="@drawable/shape_login_panel"
             android:clickable="true"
-            android:onClick="AddCompany"
+            android:onClick="viewCompany"
             app:cardCornerRadius="15sp"
             app:cardElevation="6dp">
 

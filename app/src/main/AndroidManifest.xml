@@ -42,6 +42,18 @@
             android:exported="true"/>
 
         <activity
+            android:name=".AddCompany"
+            android:exported="true"/>
+
+        <activity
+            android:name=".FetchingActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".CompanyDetailsActivity"
+            android:exported="true"/>
+
+        <activity
             android:name=".activityHome"
             android:exported="true">
             <intent-filter>

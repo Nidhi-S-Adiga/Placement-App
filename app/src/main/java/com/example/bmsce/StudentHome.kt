@@ -49,4 +49,10 @@ class StudentHome : AppCompatActivity() {
         startActivity(intent)
         finish() // Optional: Close current activity to prevent user from coming back to it using back button
     }
+
+    fun viewCompany(view: View){
+        val intent = Intent(baseContext, FetchingActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 }

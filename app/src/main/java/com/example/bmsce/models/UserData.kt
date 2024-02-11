@@ -1,4 +1,4 @@
-package com.example.bmsce
+package com.example.bmsce.models
 
 data class UserData(
     val id: String? =null,

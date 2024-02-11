@@ -3,6 +3,7 @@ package com.example.bmsce
 import android.content.Intent
 import android.health.connect.datatypes.units.Length
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,8 @@ import com.google.firebase.database.ValueEventListener
 class TPOHome : AppCompatActivity(){
     private lateinit var binding: TpoHomeBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var email: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = TpoHomeBinding.inflate(layoutInflater)
@@ -25,6 +28,7 @@ class TPOHome : AppCompatActivity(){
         firebaseAuth = FirebaseAuth.getInstance()
 
         val userEmail = intent.extras?.getString("userEmail")?:"No message found"
+        email=intent.extras?.getString("userEmail")?:"No message found"
 
         // Find the TextView by its ID in the XML layout
         val userEmailTextView: TextView = findViewById(R.id.TpoEmailTextView)
@@ -42,6 +46,13 @@ class TPOHome : AppCompatActivity(){
             startActivity(Intent(this@TPOHome, MainActivity::class.java))
             finish()
         }
+    }
+
+    fun addCompanyClicked(view: View){
+        val intent = Intent(baseContext, AddCompany::class.java)
+        intent.putExtra("userEmail", email)
+        startActivity(intent)
+        finish()
     }
 
 }
