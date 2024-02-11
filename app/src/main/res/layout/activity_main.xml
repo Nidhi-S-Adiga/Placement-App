@@ -73,6 +73,8 @@
             android:layout_rowWeight="1"
             app:cardCornerRadius="15sp"
             app:cardElevation="6dp"
+            android:onClick="tpoClicked"
+            android:clickable="true"
             android:background="@drawable/shape_login_panel"
             android:layout_margin="12sp">
 
@@ -93,7 +95,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12sp"
                     android:text="Placement\nOfficer"
-                    android:onClick="tpoClicked"
                     android:textColor="#000000"
                     android:textSize="25sp" />
 
