@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7676"
+    tools:context=".placementDetails">
+
+    <RelativeLayout
+        android:id="@+id/rl01"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:background="#0288D1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/clogo0"
+                android:layout_width="45sp"
+                android:layout_height="45sp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/graduateiconwhite" />
+
+            <TextView
+                android:id="@+id/bmsceName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/clogo0"
+                android:layout_centerVertical="true"
+                android:text="BMSCE"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="36sp" />
+
+            <TextView
+                android:id="@+id/placementsName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/bmsceName1"
+                android:text=" Placements"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#ffffff"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tpoLoginHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="118dp"
+            android:layout_marginBottom="30dp"
+            android:text="Placement Office"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llLoginPanel"
+        android:layout_width="414dp"
+        android:layout_height="468dp"
+        android:layout_marginTop="10sp"
+        android:orientation="vertical"
+        android:paddingLeft="50sp"
+        android:paddingTop="70sp"
+        android:paddingRight="50sp"
+        android:background="@drawable/shape_login_panel"
+        app:layout_constraintTop_toBottomOf="@+id/rl01"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-5dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="74dp"
+          />
+
+        <TextView
+            android:id="@+id/Vision"
+            android:layout_width="336dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="74dp"
+            android:layout_marginBottom="27dp"
+            android:background="#7676"
+            android:text=" Vision"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#0288D1"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tpoLoginHeading"/>
+        <TextView
+            android:id="@+id/VisionContent"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="74dp"
+            android:layout_marginBottom="27dp"
+            android:text=" To emerge as a most preferred destination for all corporates to hire globally component and ethically strong engineering talent."
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#0288D1"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Mission"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="74dp"
+            android:layout_width="336dp"
+            android:background="#7676"
+            android:layout_marginBottom="27dp"
+            android:text="Mission"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#0288D1"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/MissionContent"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="74dp"
+            android:layout_marginBottom="27dp"
+            android:text=" To nurture fresh talent to be industry ready by conducting purposeful and value added teaching and training and to identify the right career option for the students in tandem with their skills, personal values and interest."
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#0288D1"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/About"
+            android:layout_width="336dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="74dp"
+            android:layout_marginBottom="27dp"
+            android:background="#7676"
+            android:text=" About"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#0288D1"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/AboutContent"
+            android:layout_width="314dp"
+            android:layout_height="90dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="94dp"
+            android:layout_marginBottom="27dp"
+            android:text=" The placement ofﬁce shall communicate, network and build relations with potential recruiters. Students seeking placement shall register for the campus placements.
+The placement ofﬁce conﬁrms his/her registration, participates in pre-placement visits to the companies and conducts grooming and training of the students for better placements.
+"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#0288D1"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
