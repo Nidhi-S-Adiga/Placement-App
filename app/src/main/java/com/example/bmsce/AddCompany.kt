@@ -49,15 +49,19 @@ class AddCompany: AppCompatActivity() {
 
         if(cmpname.isEmpty()){
             companyName.error="Please enter company name"
+            return
         }
         if(cmprole.isEmpty()){
             companyName.error="Please enter role offered"
+            return
         }
         if(cmppackage.isEmpty()){
             companyName.error="Please enter package offered"
+            return
         }
         if(cmplink.isEmpty()){
             companyName.error="Please enter company registration link"
+            return
         }
 
         val cmpId = dbRef.push().key!!
