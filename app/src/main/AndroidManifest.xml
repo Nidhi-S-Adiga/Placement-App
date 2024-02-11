@@ -54,6 +54,13 @@
             android:exported="true"/>
 
         <activity
+            android:name=".aboutCollege"
+            android:exported="true"/>
+
+        <activity
+            android:name=".statisticsCollege"
+            android:exported="true"/>
+        <activity
             android:name=".activityHome"
             android:exported="true">
             <intent-filter>

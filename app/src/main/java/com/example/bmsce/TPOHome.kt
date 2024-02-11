@@ -55,4 +55,27 @@ class TPOHome : AppCompatActivity(){
         finish()
     }
 
+    fun onAboutClick(view: View) {
+        val intent = Intent(this, aboutCollege::class.java)
+        startActivity(intent)
+        intent.putExtra("userEmail", email)
+        startActivity(intent)
+        finish()
+    }
+
+    fun aboutStatistics(view: View) {
+        val intent = Intent(this,statisticsCollege::class.java)
+        startActivity(intent)
+        intent.putExtra("userEmail", email)
+        startActivity(intent)
+        finish()
+    }
+
+    fun aboutPlacement(view: View) {
+        val intent = Intent(this,placementDetails::class.java)
+        startActivity(intent)
+        intent.putExtra("userEmail", email)
+        startActivity(intent)
+        finish()
+    }
 }

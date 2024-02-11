@@ -11,19 +11,14 @@ import com.google.firebase.auth.FirebaseAuth
 class StudentHome : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var userEmailTextView: TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.student_home)
-
         firebaseAuth = FirebaseAuth.getInstance()
-
         userEmailTextView = findViewById(R.id.userEmailTextView)
-
         // Display logged in user's email
         displayUserEmail()
     }
-
     private fun displayUserEmail() {
         // Check if user is logged in
         val currentUser = firebaseAuth.currentUser
@@ -37,22 +32,40 @@ class StudentHome : AppCompatActivity() {
             userEmailTextView.text = "Not logged in"
         }
     }
-
     fun LogoutStudent(view: View) {
         // Sign out user from Firebase
         firebaseAuth.signOut()
-
         Toast.makeText(this, "You have been logged out", Toast.LENGTH_SHORT).show()
-
         // Redirect to login or home activity
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish() // Optional: Close current activity to prevent user from coming back to it using back button
     }
-
     fun viewCompany(view: View){
         val intent = Intent(baseContext, FetchingActivity::class.java)
         startActivity(intent)
         finish()
     }
+    fun onAboutClick(view: View) {
+        val intent = Intent(this, aboutCollege::class.java)
+        startActivity(intent)
+        finish()
+
+    }
+
+    fun aboutStatistics(view: View) {
+        val intent = Intent(this,statisticsCollege::class.java)
+        startActivity(intent)
+        finish()
+
+    }
+
+    fun aboutPlacement(view: View) {
+        val intent = Intent(this,placementDetails::class.java)
+        startActivity(intent)
+        finish()
+    }
+
 }
+
+

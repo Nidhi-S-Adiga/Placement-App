@@ -103,16 +103,17 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+
+
         <androidx.cardview.widget.CardView
-            android:id="@+id/previouspapers"
+            android:id="@+id/about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="12sp"
-            android:background="@drawable/shape_login_panel"
             android:clickable="true"
-            android:onClick="PreviousPapers"
+            android:onClick="onAboutClick"
             app:cardCornerRadius="15sp"
             app:cardElevation="6sp">
 
@@ -126,29 +127,30 @@
                 <ImageView
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:src="@drawable/paperpic" />
+                    android:src="@drawable/college" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12sp"
-                    android:text="Papers"
+                    android:text="About"
                     android:textColor="#000000"
                     android:textSize="25sp" />
 
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/addnotif"
+            android:id="@+id/aboutStatistics"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="12sp"
-            android:background="@drawable/shape_login_panel"
             android:clickable="true"
-            android:onClick="AddNotification"
+            android:onClick="aboutStatistics"
             app:cardCornerRadius="15sp"
             app:cardElevation="6sp">
 
@@ -162,29 +164,30 @@
                 <ImageView
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:src="@drawable/notify2" />
+                    android:src="@drawable/statistics" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12sp"
-                    android:text="Notify"
+                    android:text="Statistics"
                     android:textColor="#000000"
                     android:textSize="25sp" />
 
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/selectedstudents"
+            android:id="@+id/aboutoffice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="12sp"
-            android:background="@drawable/shape_login_panel"
             android:clickable="true"
-            android:onClick="SelectedStudents"
+            android:onClick="aboutPlacement"
             app:cardCornerRadius="15sp"
             app:cardElevation="6sp">
 
@@ -198,17 +201,19 @@
                 <ImageView
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:src="@drawable/graduated" />
+                    android:src="@drawable/details" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12sp"
-                    android:text="Selected"
+                    android:text="Details"
                     android:textColor="#000000"
                     android:textSize="25sp" />
 
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
     </GridLayout>
 
