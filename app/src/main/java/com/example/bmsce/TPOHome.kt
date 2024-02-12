@@ -51,6 +51,7 @@ class TPOHome : AppCompatActivity(){
     fun addCompanyClicked(view: View){
         val intent = Intent(baseContext, AddCompany::class.java)
         intent.putExtra("userEmail", email)
+        intent.putExtra("userType", "TPO")
         startActivity(intent)
         finish()
     }
@@ -58,6 +59,7 @@ class TPOHome : AppCompatActivity(){
     fun onAboutClick(view: View) {
         val intent = Intent(this, aboutCollege::class.java)
         startActivity(intent)
+        intent.putExtra("userType", "TPO")
         intent.putExtra("userEmail", email)
         startActivity(intent)
         finish()
@@ -66,6 +68,7 @@ class TPOHome : AppCompatActivity(){
     fun aboutStatistics(view: View) {
         val intent = Intent(this,statisticsCollege::class.java)
         startActivity(intent)
+        intent.putExtra("userType", "TPO")
         intent.putExtra("userEmail", email)
         startActivity(intent)
         finish()
@@ -74,6 +77,7 @@ class TPOHome : AppCompatActivity(){
     fun aboutPlacement(view: View) {
         val intent = Intent(this,placementDetails::class.java)
         startActivity(intent)
+        intent.putExtra("userType", "TPO")
         intent.putExtra("userEmail", email)
         startActivity(intent)
         finish()

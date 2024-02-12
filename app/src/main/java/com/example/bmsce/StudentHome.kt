@@ -48,6 +48,7 @@ class StudentHome : AppCompatActivity() {
     }
     fun onAboutClick(view: View) {
         val intent = Intent(this, aboutCollege::class.java)
+        intent.putExtra("userType", "Student")
         startActivity(intent)
         finish()
 
@@ -55,6 +56,7 @@ class StudentHome : AppCompatActivity() {
 
     fun aboutStatistics(view: View) {
         val intent = Intent(this,statisticsCollege::class.java)
+        intent.putExtra("userType", "Student")
         startActivity(intent)
         finish()
 
@@ -62,6 +64,7 @@ class StudentHome : AppCompatActivity() {
 
     fun aboutPlacement(view: View) {
         val intent = Intent(this,placementDetails::class.java)
+        intent.putExtra("userType", "Student")
         startActivity(intent)
         finish()
     }

@@ -29,4 +29,12 @@
         android:scaleType="fitCenter"
         android:src="@drawable/placementgraph" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goBack"
+        android:text="Go Back Home" />
+
+
 </LinearLayout>

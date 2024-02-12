@@ -22,6 +22,10 @@
             android:exported="true"/>
 
         <activity
+            android:name=".placementDetails"
+            android:exported="true"/>
+
+        <activity
             android:name=".StudentRegister"
             android:exported="true"/>
 
