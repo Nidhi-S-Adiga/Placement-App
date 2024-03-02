@@ -1,131 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".StudentLogin">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/rl01"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200sp"
-        android:background="#0288D1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" >
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        tools:context=".StudentLogin">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+            android:id="@+id/rl01"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:background="#0288D1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" >
 
-            <ImageView
-                android:id="@+id/clogo0"
-                android:layout_width="45sp"
-                android:layout_height="45sp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/graduateiconwhite" />
-
-            <TextView
-                android:id="@+id/cvrceName1"
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/clogo0"
-                android:layout_centerVertical="true"
-                android:text="BMSCE"
-                android:textStyle="bold"
-                android:textColor="#ffffff"
-                android:textSize="36sp" />
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/clogo0"
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/graduateiconwhite" />
+
+                <TextView
+                    android:id="@+id/cvrceName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/clogo0"
+                    android:layout_centerVertical="true"
+                    android:text="BMSCE"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:id="@+id/placementsName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/cvrceName1"
+                    android:text=" Placements"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="#ffffff"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
 
             <TextView
-                android:id="@+id/placementsName1"
+                android:id="@+id/studentLoginHeading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/cvrceName1"
-                android:text=" Placements"
+                android:layout_marginEnd="138dp"
+                android:layout_marginBottom="27dp"
+                android:text="Student Login"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#ffffff"
-                android:textSize="36sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </RelativeLayout>
 
+        <LinearLayout
+            android:id="@+id/llLoginPanel"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl01"
+            android:layout_marginTop="60sp"
+            android:layout_height="350sp"
+            android:background="@drawable/shape_login_panel"
+            tools:ignore="MissingConstraints"
+            android:paddingTop="70sp"
+            android:paddingLeft="50sp"
+            android:paddingRight="50sp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/loginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:hint="Student Email"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/loginPassword"
+                android:layout_width="match_parent"
+                android:textColor="#000000"
+                android:inputType="textPassword"
+                android:layout_height="60sp"
+                android:hint="Password" />
+
+
+            <Button
+                android:id="@+id/studentlogin"
+                android:onClick="StudentLoggedIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/myowngradient"
+                android:text="Login"
+                android:textSize="27sp"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="50px"
+                app:layout_constraintBottom_toBottomOf="@id/llLoginPanel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
         <TextView
-            android:id="@+id/studentLoginHeading"
+            android:id="@+id/new_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="138dp"
-            android:layout_marginBottom="27dp"
-            android:text="Student Login"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/llLoginPanel"
-        android:layout_width="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/rl01"
-        android:layout_marginTop="60sp"
-        android:layout_height="350sp"
-        android:background="@drawable/shape_login_panel"
-        tools:ignore="MissingConstraints"
-        android:paddingTop="70sp"
-        android:paddingLeft="50sp"
-        android:paddingRight="50sp"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/loginEmail"
-            android:layout_width="match_parent"
-            android:layout_height="60sp"
-            android:hint="Student Email"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/loginPassword"
-            android:layout_width="match_parent"
-            android:textColor="#000000"
-            android:inputType="textPassword"
-            android:layout_height="60sp"
-            android:hint="Password" />
-
-
-        <Button
-            android:id="@+id/studentlogin"
-            android:onClick="StudentLoggedIn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/myowngradient"
-            android:text="Login"
-            android:textSize="27sp"
-            android:textColor="#ffffff"
-            android:layout_marginLeft="250px"
-            android:layout_marginTop="50px"
+            android:text="New User? Click here!"
+            android:onClick="newUserClicked"
             app:layout_constraintBottom_toBottomOf="@id/llLoginPanel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/new_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New User? Click here!"
-        android:onClick="newUserClicked"
-        app:layout_constraintBottom_toBottomOf="@id/llLoginPanel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

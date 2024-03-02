@@ -41,8 +41,13 @@ class CompanyDetailsActivity : AppCompatActivity(){
         tvCmpRole.text = intent.getStringExtra("cmprole")
         tvCmpPackage.text = intent.getStringExtra("cmppackage")
         val companyLink = intent.getStringExtra("cmplink")
-        tvCmpLink.text = companyLink
+        tvCmpLink.text = "Click here!"
 
+        tvCmpLink.setOnClickListener {
+            // Create an intent to open the link in a web browser
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(companyLink))
+            startActivity(intent)
+        }
     }
 
     fun backClicked(view: View){

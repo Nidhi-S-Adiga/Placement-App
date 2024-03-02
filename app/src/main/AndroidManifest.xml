@@ -64,6 +64,14 @@
         <activity
             android:name=".statisticsCollege"
             android:exported="true"/>
+
+        <activity
+            android:name=".TPOfetch"
+            android:exported="true"/>
+
+        <activity
+            android:name=".TPO_CompanyDetails"
+            android:exported="true"/>
         <activity
             android:name=".activityHome"
             android:exported="true">

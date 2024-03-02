@@ -1,137 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#D8D9DA"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/rl01"
-        android:layout_width="match_parent"
-        android:layout_height="200sp"
-        android:background="#0288D1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" >
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
-
-            <ImageView
-                android:id="@+id/hlogo0"
-                android:layout_width="45sp"
-                android:layout_height="45sp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/graduateiconwhite" />
-
-            <TextView
-                android:id="@+id/cvrce0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/hlogo0"
-                android:layout_centerVertical="true"
-                android:text="BMSCE"
-                android:textStyle="bold"
-                android:textColor="#ffffff"
-                android:textSize="36sp" />
-
-            <TextView
-                android:id="@+id/health0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/cvrce0"
-                android:text=" Placements"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#ffffff"
-                android:textSize="36sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-
-
-    </RelativeLayout>
-    <GridLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150sp"
-        android:rowCount="2"
-        android:columnCount="2"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="#ffff"
+        tools:context=".MainActivity">
 
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            app:cardCornerRadius="15sp"
-            app:cardElevation="6dp"
-            android:onClick="tpoClicked"
-            android:clickable="true"
-            android:background="@drawable/shape_login_panel"
-            android:layout_margin="12sp">
 
-            <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffff"
+            tools:context=".MainActivity">
+
+            <RelativeLayout
+                android:id="@+id/rl01"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="16sp">
+                android:layout_height="200sp"
+                android:background="#0288D1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" >
 
-                <ImageView
-                    android:layout_width="80sp"
-                    android:layout_height="80sp"
-                    android:src="@drawable/adminlogocvrce" />
-
-                <TextView
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12sp"
-                    android:text="Placement\nOfficer"
-                    android:textColor="#000000"
-                    android:textSize="25sp" />
+                    android:layout_centerInParent="true">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:id="@+id/hlogo0"
+                        android:layout_width="45sp"
+                        android:layout_height="45sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/graduateiconwhite" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/studentCardView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="15sp"
-            android:layout_columnWeight="1"
-            android:background="@drawable/shape_login_panel"
-            android:layout_rowWeight="1"
-            app:cardElevation="6sp"
-            android:layout_margin="12sp">
-            <LinearLayout
+                    <TextView
+                        android:id="@+id/cvrce0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/hlogo0"
+                        android:layout_centerVertical="true"
+                        android:text="BMSCE"
+                        android:textStyle="bold"
+                        android:textColor="#ffffff"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/health0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/cvrce0"
+                        android:text=" Placements"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="#ffffff"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+            <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16sp"
-                android:gravity="center"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="80sp"
-                    android:layout_height="80sp"
-                    android:src="@drawable/stulog"/>
-                <TextView
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150sp"
+                android:rowCount="2"
+                android:columnCount="2"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12sp"
-                    android:textColor="#000000"
-                    android:text="Student"
-                    android:textSize="25sp"/>
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardCornerRadius="15sp"
+                    app:cardElevation="6dp"
+                    android:onClick="tpoClicked"
+                    android:clickable="true"
+                    android:background="@drawable/shape_login_panel"
+                    android:layout_margin="12sp">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16sp">
 
-    </GridLayout>
+                        <ImageView
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:src="@drawable/adminlogocvrce" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12sp"
+                            android:text="Placement\nOfficer"
+                            android:textColor="#000000"
+                            android:textSize="25sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/studentCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="15sp"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/shape_login_panel"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6sp"
+                    android:layout_margin="12sp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16sp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:src="@drawable/stulog"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12sp"
+                            android:textColor="#000000"
+                            android:text="Student"
+                            android:textSize="25sp"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

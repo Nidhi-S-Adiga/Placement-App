@@ -18,11 +18,6 @@ class statisticsCollege : AppCompatActivity() {
             userEmail = "No message found"
         }
 
-        val imageView1: ImageView = findViewById(R.id.imageView1)
-        val imageView2: ImageView = findViewById(R.id.imageView2)
-
-        imageView1.setImageResource(R.drawable.placementtable)
-        imageView2.setImageResource(R.drawable.placementgraph)
     }
 
     fun goBack(view: View?) {

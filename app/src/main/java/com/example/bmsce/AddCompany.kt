@@ -21,6 +21,7 @@ class AddCompany: AppCompatActivity() {
 
     private lateinit var dbRef: DatabaseReference
     private lateinit var userEmail:String
+    private lateinit var spreadsheet: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +33,9 @@ class AddCompany: AppCompatActivity() {
         role = findViewById(R.id.Roleoffered)
         packageGiven = findViewById(R.id.Package)
         link = findViewById(R.id.LinktoApply)
+        spreadsheet = findViewById(R.id.spreadsheet)
         addbtn = findViewById(R.id.add)
+
 
         dbRef = FirebaseDatabase.getInstance().getReference("company")
 
@@ -46,27 +49,33 @@ class AddCompany: AppCompatActivity() {
         val cmprole=role.text.toString()
         val cmppackage=packageGiven.text.toString()
         val cmplink=link.text.toString()
+        val spreadsheetValue = spreadsheet.text.toString()
+
 
         if(cmpname.isEmpty()){
             companyName.error="Please enter company name"
             return
         }
         if(cmprole.isEmpty()){
-            companyName.error="Please enter role offered"
+            role.error="Please enter role offered"
             return
         }
         if(cmppackage.isEmpty()){
-            companyName.error="Please enter package offered"
+            packageGiven.error="Please enter package offered"
             return
         }
         if(cmplink.isEmpty()){
-            companyName.error="Please enter company registration link"
+            link.error="Please enter company registration link"
+            return
+        }
+        if(spreadsheetValue.isEmpty()){
+            spreadsheet.error="Please enter company spreadsheet link"
             return
         }
 
         val cmpId = dbRef.push().key!!
 
-        val company = CompanyModel(cmpId,cmpname,cmprole,cmppackage,cmplink)
+        val company = CompanyModel(cmpId,cmpname,cmprole,cmppackage,cmplink,spreadsheetValue)
 
         dbRef.child(cmpId).setValue(company).addOnCompleteListener{
             Toast.makeText(this,"Data inserted successfully",Toast.LENGTH_LONG).show()
@@ -75,17 +84,26 @@ class AddCompany: AppCompatActivity() {
             role.text.clear()
             packageGiven.text.clear()
             link.text.clear()
+            spreadsheet.text.clear()
 
         }.addOnFailureListener{err->
             Toast.makeText(this,"Error ${err.message}",Toast.LENGTH_LONG).show()
         }
     }
 
-    fun homeClicked(view: View){
-        val intent = Intent(baseContext, TPOHome::class.java)
+    fun company_clicked(view: View){
+        val intent = Intent(baseContext, TPOfetch::class.java)
         intent.putExtra("userEmail", userEmail)
         startActivity(intent)
         finish()
     }
+
+    fun homeClicked(view: View){
+        val intent = Intent(baseContext, TPOHome::class.java)
+        intent.putExtra("userEmail", userEmail)  // Add userEmail to the intent again
+        startActivity(intent)
+        finish()
+    }
+
 
 }

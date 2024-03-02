@@ -5,5 +5,6 @@ data class CompanyModel(
     var cmpname:String? =null,
     var cmprole:String? =null,
     var cmppackage:String? =null,
-    var cmplink:String? =null
+    var cmplink:String? =null,
+    var spreadsheetValue:String? =null
 )
