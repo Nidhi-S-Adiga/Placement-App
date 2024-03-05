@@ -25,6 +25,7 @@ class TPO_CompanyDetails : AppCompatActivity(){
     private lateinit var shareForm: Button
     private lateinit var shareSheet: Button
     private lateinit var btnUpdate: Button
+    private lateinit var btnDelete: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +44,29 @@ class TPO_CompanyDetails : AppCompatActivity(){
                 intent.getStringExtra("cmpname").toString(),
             )
         }
+        btnDelete.setOnClickListener {
+            deleteRecord(
+                intent.getStringExtra("cmpId").toString(),
+            )
+        }
     }
+    private fun deleteRecord(
+        id:String
+    )
+    {
+        val dbRef = FirebaseDatabase.getInstance().getReference("company").child(id)
+        val mTask = dbRef.removeValue()
 
+        mTask.addOnSuccessListener {
+            Toast.makeText(this,"Comapny details deleted",Toast.LENGTH_LONG).show()
+            val intent =Intent(this,FetchingActivity::class.java)
+            finish()
+            startActivity(intent)
+        }.addOnFailureListener{error->
+            Toast.makeText(this,"Deleting Err ${error.message}",Toast.LENGTH_LONG).show()
+
+        }
+    }
     private fun openUpdateDialog(
         cmpId: String,
         cmpname: String,
@@ -58,11 +80,16 @@ class TPO_CompanyDetails : AppCompatActivity(){
         val companyNameEditText = mDialogView.findViewById<EditText>(R.id.companyNameEditText)
         val roleEditText = mDialogView.findViewById<EditText>(R.id.roleEditText)
         val packageEditText = mDialogView.findViewById<EditText>(R.id.packageEditText)
+        val registrationEditText = mDialogView.findViewById<EditText>(R.id.registrationEditText)
+        val spreadsheetEditText = mDialogView.findViewById<EditText>(R.id.spreadsheetEditText)
+
         val updateButton = mDialogView.findViewById<Button>(R.id.updateButton)
 
         companyNameEditText.setText(intent.getStringExtra("cmpname").toString())
         roleEditText.setText(intent.getStringExtra("cmprole").toString())
         packageEditText.setText(intent.getStringExtra("cmppackage").toString())
+        registrationEditText.setText(intent.getStringExtra("cmplink").toString())
+        spreadsheetEditText.setText(intent.getStringExtra("cmpSpread").toString())
 
         mDialog.setTitle("Updating $cmpname details")
 
@@ -74,13 +101,18 @@ class TPO_CompanyDetails : AppCompatActivity(){
                 cmpId,
                 companyNameEditText.text.toString(),
                 roleEditText.text.toString(),
-                packageEditText.text.toString()
+                packageEditText.text.toString(),
+                registrationEditText.text.toString(),
+                spreadsheetEditText.text.toString()
+
+
             )
             Toast.makeText(applicationContext, "Company Data Uploaded", Toast.LENGTH_LONG).show()
             tvCmpName.text = companyNameEditText.text.toString()
             tvCmpRole.text = roleEditText.text.toString()
             tvCmpPackage.text = packageEditText.text.toString()
-
+            tvCmpLink.text=registrationEditText.text.toString()
+            tvpSpreadsheet.text=spreadsheetEditText.text.toString()
             alertDialog.dismiss()
         }
     }
@@ -89,10 +121,12 @@ class TPO_CompanyDetails : AppCompatActivity(){
         id:String,
         name: String,
         role: String,
-        pack: String
+        pack: String,
+        link:String,
+        sheet:String
     ){
         val dbRef = FirebaseDatabase.getInstance().getReference("company").child(id)
-        val cmpInfo= CompanyModel(id,name,role,pack)
+        val cmpInfo= CompanyModel(id,name,role,pack,link,sheet)
         dbRef.setValue(cmpInfo)
     }
 
@@ -106,6 +140,8 @@ class TPO_CompanyDetails : AppCompatActivity(){
         shareForm= findViewById(R.id.shareForm)
         shareSheet= findViewById(R.id.shareSheet)
         btnUpdate = findViewById(R.id.update)
+        btnDelete = findViewById(R.id.btnDelete)
+
     }
 
     private fun setValuesToViews() {
