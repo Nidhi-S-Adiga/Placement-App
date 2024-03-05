@@ -35,7 +35,7 @@ class statisticsCollege : AppCompatActivity(){
                     "Students Placed   : \t635\n" +
                     "Total Offers  \t\t    : 1078\n" +
                     "Total Percentage  : 79", Toast.LENGTH_LONG)
-            toast.setGravity(Gravity.CENTER_VERTICAL, 0, -10)
+            toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
             val handler = Handler()
             val runnable = Runnable {
@@ -49,7 +49,7 @@ class statisticsCollege : AppCompatActivity(){
                     "Students Placed   : \t571\n" +
                     "Total Offers  \t\t    : 1047\n" +
                     "Total Percentage  : 68", Toast.LENGTH_LONG)
-            toast.setGravity(Gravity.CENTER_VERTICAL, 0, -10)
+            toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
             val handler = Handler()
             val runnable = Runnable {
@@ -62,7 +62,7 @@ class statisticsCollege : AppCompatActivity(){
                     "Students Placed   : \t792\n" +
                     "Total Offers    \t\t  : 1185\n" +
                     "Total Percentage  : 71", Toast.LENGTH_LONG)
-            toast.setGravity(Gravity.CENTER_VERTICAL, 0, -10)
+            toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
 
             val handler = Handler()
@@ -76,7 +76,7 @@ class statisticsCollege : AppCompatActivity(){
                     "Students Placed   : \t697\n" +
                     "Total Offers   \t\t   : 1192\n" +
                     "Total Percentage  : 72", Toast.LENGTH_LONG)
-            toast.setGravity(Gravity.CENTER_VERTICAL, 0, -10)
+            toast.setGravity(Gravity.TOP, 0, 0)
             toast.show()
             val handler = Handler()
             val runnable = Runnable {
