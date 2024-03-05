@@ -59,7 +59,8 @@ class TPO_CompanyDetails : AppCompatActivity(){
 
         mTask.addOnSuccessListener {
             Toast.makeText(this,"Company details deleted",Toast.LENGTH_LONG).show()
-            val intent =Intent(this,FetchingActivity::class.java)
+            val intent =Intent(this,TPOfetch::class.java)
+            intent.putExtra("userEmail", userEmail)
             finish()
             startActivity(intent)
         }.addOnFailureListener{error->
