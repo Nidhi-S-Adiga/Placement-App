@@ -60,7 +60,6 @@ class TPOfetch:AppCompatActivity() {
                         override fun onItemClick(position: Int) {
                             val intent = Intent(this@TPOfetch, TPO_CompanyDetails::class.java)
                             intent.putExtra("userEmail", email)
-                            startActivity(intent)
 
 
                             intent.putExtra("cmpId",cmplist[position].cmpId)
