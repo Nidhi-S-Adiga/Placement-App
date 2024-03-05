@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -29,76 +30,75 @@ class statisticsCollege : AppCompatActivity(){
         if (userEmail == null) {
             userEmail = "No message found"
         }
-
+        fun goBack(view: View?) {
+            val userType = intent.getStringExtra("userType")
+            val intent: Intent
+            if ("Student" == userType) {
+                intent = Intent(this, StudentHome::class.java)
+            } else if ("TPO" == userType) {
+                intent = Intent(this, TPOHome::class.java)
+                intent.putExtra("userEmail", userEmail)
+            } else {
+                throw IllegalArgumentException("Invalid user type")
+            }
+            startActivity(intent)
+            finish()
+        }
         butt1.setOnClickListener{
-            val toast = Toast.makeText(this,"Total Internships \t: \t270\n" +
+
+            val alertDialogBuilder = AlertDialog.Builder(this)
+            alertDialogBuilder.setMessage("Total Internships \t: \t270\n" +
                     "Students Placed   : \t635\n" +
                     "Total Offers  \t\t    : 1078\n" +
-                    "Total Percentage  : 79", Toast.LENGTH_LONG)
-            toast.setGravity(Gravity.TOP, 0, 0)
-            toast.show()
-            val handler = Handler()
-            val runnable = Runnable {
-                toast.cancel()
-            }
-            handler.postDelayed(runnable, 5000)
-
+                    "Total Percentage  : 79")
+            alertDialogBuilder.setCancelable(true)
+            alertDialogBuilder.setPositiveButton("Close") {dialog,_-> dialog.dismiss()
         }
-        butt2.setOnClickListener {
-            val toast = Toast.makeText(this, "Total Internships \t: \t242\n" +
+            val alertDialog = alertDialogBuilder.create()
+            alertDialog.show()
+    }
+        butt2.setOnClickListener{
+
+            val alertDialogBuilder = AlertDialog.Builder(this)
+            alertDialogBuilder.setMessage("Total Internships \t: \t242\n" +
                     "Students Placed   : \t571\n" +
                     "Total Offers  \t\t    : 1047\n" +
-                    "Total Percentage  : 68", Toast.LENGTH_LONG)
-            toast.setGravity(Gravity.TOP, 0, 0)
-            toast.show()
-            val handler = Handler()
-            val runnable = Runnable {
-                toast.cancel()
+                    "Total Percentage  : 68")
+            alertDialogBuilder.setCancelable(true)
+            alertDialogBuilder.setPositiveButton("Close") {dialog,_-> dialog.dismiss()
             }
-            handler.postDelayed(runnable, 5000)
+            val alertDialog = alertDialogBuilder.create()
+            alertDialog.show()
         }
-        butt3.setOnClickListener {
-            val toast =  Toast.makeText(this, "Total Internships \t: \t553\n" +
+        butt3.setOnClickListener{
+
+            val alertDialogBuilder = AlertDialog.Builder(this)
+            alertDialogBuilder.setMessage("Total Internships \t: \t553\n" +
                     "Students Placed   : \t792\n" +
                     "Total Offers    \t\t  : 1185\n" +
-                    "Total Percentage  : 71", Toast.LENGTH_LONG)
-            toast.setGravity(Gravity.TOP, 0, 0)
-            toast.show()
-
-            val handler = Handler()
-            val runnable = Runnable {
-                toast.cancel()
+                    "Total Percentage  : 71")
+            alertDialogBuilder.setCancelable(true)
+            alertDialogBuilder.setPositiveButton("Close") {dialog,_-> dialog.dismiss()
             }
-            handler.postDelayed(runnable, 5000)
+            val alertDialog = alertDialogBuilder.create()
+            alertDialog.show()
         }
-        butt4.setOnClickListener {
-           val toast= Toast.makeText(this,"Total Internships \t: \t556\n" +
+        butt4.setOnClickListener{
+
+            val alertDialogBuilder = AlertDialog.Builder(this)
+            alertDialogBuilder.setMessage("Total Internships \t: \t556\n" +
                     "Students Placed   : \t697\n" +
                     "Total Offers   \t\t   : 1192\n" +
-                    "Total Percentage  : 72", Toast.LENGTH_LONG)
-            toast.setGravity(Gravity.TOP, 0, 0)
-            toast.show()
-            val handler = Handler()
-            val runnable = Runnable {
-                toast.cancel()
+                    "Total Percentage  : 72")
+            alertDialogBuilder.setCancelable(true)
+            alertDialogBuilder.setPositiveButton("Close") {dialog,_-> dialog.dismiss()
             }
-            handler.postDelayed(runnable, 5000)
+            val alertDialog = alertDialogBuilder.create()
+            alertDialog.show()
+        }
         }
 
 
     }
-    fun goBack(view: View?) {
-        val userType = intent.getStringExtra("userType")
-        val intent: Intent
-        if ("Student" == userType) {
-            intent = Intent(this, StudentHome::class.java)
-        } else if ("TPO" == userType) {
-            intent = Intent(this, TPOHome::class.java)
-            intent.putExtra("userEmail", userEmail)
-        } else {
-            throw IllegalArgumentException("Invalid user type")
-        }
-        startActivity(intent)
-        finish()
-    }
-}
+
+
