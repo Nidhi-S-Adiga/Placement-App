@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.security.MessageDigest
 
 
 class TPOLogin : AppCompatActivity() {
@@ -44,17 +45,23 @@ class TPOLogin : AppCompatActivity() {
 
     }
 
+    private fun hashPassword(password: String): String {
+        val md = MessageDigest.getInstance("SHA-256")
+        val hashBytes = md.digest(password.toByteArray(Charsets.UTF_8))
+        return hashBytes.joinToString("") { "%02x".format(it) }
+    }
+
     private fun loginUser(email : String, password: String){
-        databaseReference.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(object :
-            ValueEventListener {
+        val hashedPassword = hashPassword(password) // Hash the input password
 
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if(dataSnapshot.exists()){
-                    for(userSnapshot in dataSnapshot.children){
-                        val userData = userSnapshot.getValue(UserData::class.java)
+        databaseReference.orderByChild("email").equalTo(email)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        for (userSnapshot in dataSnapshot.children) {
+                            val userData = userSnapshot.getValue(UserData::class.java)
 
-
-                        if(userData != null && userData.password == password){
+                            if (userData != null && userData.password == hashedPassword) {
                             Toast.makeText(this@TPOLogin, "Login Successful", Toast.LENGTH_SHORT).show()
 
                             val welcomeMessage = "Welcome, ${userData.email}"

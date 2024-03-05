@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.security.MessageDigest
 
 class TPORegister : AppCompatActivity()  {
     private lateinit var binding: TpoRegisterBinding
@@ -50,16 +51,24 @@ class TPORegister : AppCompatActivity()  {
 
     }
 
+    private fun hashPassword(password: String): String {
+        val md = MessageDigest.getInstance("SHA-256")
+        val hashBytes = md.digest(password.toByteArray(Charsets.UTF_8))
+        return hashBytes.joinToString("") { "%02x".format(it) }
+    }
+
+
     private fun signupUser(email: String, password: String) {
         // Check if the email ends with ".ise@bmsce.ac.in"
         if (email.endsWith(".ise@bmsce.ac.in")) {
-            databaseReference.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(object : ValueEventListener {
-
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    if (!dataSnapshot.exists()) {
-                        val id = databaseReference.push().key
-                        val userData = UserData(id, email, password)
-                        databaseReference.child(id!!).setValue(userData)
+            databaseReference.orderByChild("email").equalTo(email)
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                        if (!dataSnapshot.exists()) {
+                            val id = databaseReference.push().key
+                            val hashedPassword = hashPassword(password) // Hash the password
+                            val userData = UserData(id, email, hashedPassword)
+                            databaseReference.child(id!!).setValue(userData)
 
                         Toast.makeText(this@TPORegister, "Signup Successful", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this@TPORegister, TPOLogin::class.java))
