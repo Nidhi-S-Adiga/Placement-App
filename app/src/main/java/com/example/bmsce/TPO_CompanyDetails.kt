@@ -36,8 +36,6 @@ class TPO_CompanyDetails : AppCompatActivity(){
         initView()
         setValuesToViews()
 
-        tvCmpLink.setTextIsSelectable(true)
-
         btnUpdate.setOnClickListener {
             openUpdateDialog(
                 intent.getStringExtra("cmpId").toString(),

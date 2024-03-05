@@ -85,19 +85,20 @@ class statisticsCollege : AppCompatActivity(){
             handler.postDelayed(runnable, 5000)
         }
 
-        fun goBack(view: View?) {
-            val userType = intent.getStringExtra("userType")
-            val intent: Intent
-            if ("Student" == userType) {
-                intent = Intent(this, StudentHome::class.java)
-            } else if ("TPO" == userType) {
-                intent = Intent(this, TPOHome::class.java)
-                intent.putExtra("userEmail", userEmail)
-            } else {
-                throw IllegalArgumentException("Invalid user type")
-            }
-            startActivity(intent)
-            finish()
+
+    }
+    fun goBack(view: View?) {
+        val userType = intent.getStringExtra("userType")
+        val intent: Intent
+        if ("Student" == userType) {
+            intent = Intent(this, StudentHome::class.java)
+        } else if ("TPO" == userType) {
+            intent = Intent(this, TPOHome::class.java)
+            intent.putExtra("userEmail", userEmail)
+        } else {
+            throw IllegalArgumentException("Invalid user type")
         }
+        startActivity(intent)
+        finish()
     }
 }
