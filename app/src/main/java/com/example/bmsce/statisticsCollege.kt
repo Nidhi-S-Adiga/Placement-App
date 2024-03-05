@@ -30,20 +30,7 @@ class statisticsCollege : AppCompatActivity(){
         if (userEmail == null) {
             userEmail = "No message found"
         }
-        fun goBack(view: View?) {
-            val userType = intent.getStringExtra("userType")
-            val intent: Intent
-            if ("Student" == userType) {
-                intent = Intent(this, StudentHome::class.java)
-            } else if ("TPO" == userType) {
-                intent = Intent(this, TPOHome::class.java)
-                intent.putExtra("userEmail", userEmail)
-            } else {
-                throw IllegalArgumentException("Invalid user type")
-            }
-            startActivity(intent)
-            finish()
-        }
+
         butt1.setOnClickListener{
 
             val alertDialogBuilder = AlertDialog.Builder(this)
@@ -98,7 +85,20 @@ class statisticsCollege : AppCompatActivity(){
         }
         }
 
-
+    fun goBack(view: View?) {
+        val userType = intent.getStringExtra("userType")
+        val intent: Intent
+        if ("Student" == userType) {
+            intent = Intent(this, StudentHome::class.java)
+        } else if ("TPO" == userType) {
+            intent = Intent(this, TPOHome::class.java)
+            intent.putExtra("userEmail", userEmail)
+        } else {
+            throw IllegalArgumentException("Invalid user type")
+        }
+        startActivity(intent)
+        finish()
+    }
     }
 
 
