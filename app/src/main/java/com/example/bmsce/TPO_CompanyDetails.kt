@@ -58,8 +58,9 @@ class TPO_CompanyDetails : AppCompatActivity(){
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {
-            Toast.makeText(this,"Comapny details deleted",Toast.LENGTH_LONG).show()
-            val intent =Intent(this,FetchingActivity::class.java)
+            Toast.makeText(this,"Company details deleted",Toast.LENGTH_LONG).show()
+            val intent =Intent(this,TPOfetch::class.java)
+            intent.putExtra("userEmail", userEmail)
             finish()
             startActivity(intent)
         }.addOnFailureListener{error->
@@ -107,7 +108,7 @@ class TPO_CompanyDetails : AppCompatActivity(){
 
 
             )
-            Toast.makeText(applicationContext, "Company Data Uploaded", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Company Data Updated", Toast.LENGTH_LONG).show()
             tvCmpName.text = companyNameEditText.text.toString()
             tvCmpRole.text = roleEditText.text.toString()
             tvCmpPackage.text = packageEditText.text.toString()
