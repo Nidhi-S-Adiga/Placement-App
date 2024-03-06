@@ -83,7 +83,7 @@ class statisticsCollege : AppCompatActivity(){
             val alertDialog = alertDialogBuilder.create()
             alertDialog.show()
         }
-        }
+    }
 
     fun goBack(view: View?) {
         val userType = intent.getStringExtra("userType")
